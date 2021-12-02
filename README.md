@@ -18,11 +18,6 @@ Implement single page shoe ordering web app ([reference](https://drive.google.co
 3. Parent-Child component communication
 4. Information hierarchy of all the content and components
 
-### Submission Details
-
-1. Host the code in a version control system eg. Github, Gitlab etc, and submit the link to the repository below.
-2. Also, host the web app online using services like Netlify, Surge etc and submit its link below
-   - DO NOT EXPECT the person checking the task to install your web app locally. There can be a lot of issues and back & forth, in case of any issue during local installation. It’s better you host the app and send us the link
 
 Solution:
 A react UI template with filters
