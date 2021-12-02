@@ -177,7 +177,7 @@ const Dashboard = () => {
   const [filter, selectFilter] = useState({
     select: false,
     categories: [],
-    price: 1000,
+    price: 6000,
     size: [],
   });
   const resetFilters = () => {

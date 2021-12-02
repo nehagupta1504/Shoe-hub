@@ -1,6 +1,7 @@
 import "./App.css";
-require("dotenv").config();
+
 import Dashboard from "./components/Dashboard";
+// require("dotenv").config();
 function App() {
   return (
     <div className="App">

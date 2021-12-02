@@ -38,7 +38,7 @@ let ShowDetails = [
     company: "companyXYZ",
     size: "UK7",
     category: "flip-flops",
-    price: 7000,
+    price: 5000,
     img: "http://tripleclickspromotions.weebly.com/uploads/3/2/2/5/32257861/s318984304944939200_p8_i2_w640.jpeg",
   },
 ];
