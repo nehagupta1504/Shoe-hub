@@ -8,7 +8,10 @@ import {
 } from "react";
 import { ShowDetails, AvailableSizes, AvailableCategories } from "../Data/data";
 
+// creating context of filters
 const filterContext = createContext({ categories: [], price: "", size: "" });
+
+// component for category filter
 const Category = () => {
   const { filter, selectFilter } = useContext(filterContext);
   const { select, categories } = filter;
@@ -48,11 +51,13 @@ const Category = () => {
     </div>
   );
 };
+
+// component for price filter
+
 const Price = () => {
   const { filter, selectFilter } = useContext(filterContext);
   const { select, categories, price } = filter;
   const handleChange = (e) => {
-    console.log(e.target.value);
     selectFilter({ ...filter, select: true, price: e.target.value });
   };
   return (
@@ -76,6 +81,9 @@ const Price = () => {
     </div>
   );
 };
+
+// component for size filter
+
 const Size = () => {
   const { filter, selectFilter } = useContext(filterContext);
   const { select, size } = filter;
@@ -115,26 +123,30 @@ const Size = () => {
     </div>
   );
 };
+
+// component to render shoes data
+
 const Card = () => {
   const { filter } = useContext(filterContext);
   const { select, categories, price, size } = filter;
   const [filterdList, setFilteredList] = useState([]);
   useEffect(() => {
-    console.log(price);
-    if (categories.length == 0 && size.length == 0 && price == 1000) {
-      setFilteredList([...ShowDetails]);
+    if (categories.length == 0 && size.length == 0) {
+      let newFilterdList = ShowDetails.filter((el) => {
+        if (el.price < price) {
+          return el;
+        }
+      });
+      setFilteredList([...newFilterdList]);
     } else {
       let newList = ShowDetails.filter((el) => {
         if (
           categories.indexOf(el.category) != -1 ||
           (size.indexOf(el.size) != -1 && el.price <= price)
         ) {
-          console.log("el added");
-          console.log(el);
           return el;
         }
       });
-      console.log(newList);
       setFilteredList(newList);
     }
   }, [categories, price, size]);
@@ -159,6 +171,8 @@ const Card = () => {
     </div>
   );
 };
+
+// component which render the sidebars as well as the card
 const Dashboard = () => {
   const [filter, selectFilter] = useState({
     select: false,
