@@ -1,4 +1,5 @@
 import "./App.css";
+require("dotenv").config();
 import Dashboard from "./components/Dashboard";
 function App() {
   return (
