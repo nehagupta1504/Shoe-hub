@@ -181,7 +181,7 @@ const Dashboard = () => {
     size: [],
   });
   const resetFilters = () => {
-    selectFilter({ select: false, categories: [], price: 1000, size: [] });
+    selectFilter({ select: false, categories: [], price: 6000, size: [] });
   };
   return (
     <filterContext.Provider
